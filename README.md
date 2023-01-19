@@ -1,24 +1,47 @@
-# README
+# BookSell
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Project is dedicated to work with AJAX and Rails 7. Follw the steps below to setup the project.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+* ruby version 3.0
+* rails version 7.0
 
-* System dependencies
+## Clone the Repository
 
-* Configuration
+```
+git clone https://github.com/ravi4rails/booksell.git
+```
 
-* Database creation
+```
+cd booksell
+```
 
-* Database initialization
+Install bundle
 
-* How to run the test suite
+```
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+After instaling the bundle run following command to get bootstrap working:
 
-* Deployment instructions
+```
+yarn build:css
+```
 
-* ...
+Runing the migration and setup the database. Here I am using sqlite as database adapter. If you are using postgresql or MySQL then first configure your database.yml accordingly. And then run following commands:
+
+
+```
+rails db:migrate
+```
+
+```
+rails db:seed
+```
+
+## Get the app running
+
+Once following all above steps, start your rails server and visit http://localhost:3000/.
+
+Woooohooo!
