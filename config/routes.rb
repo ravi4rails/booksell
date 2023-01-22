@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "books#index"
+
+  resources :books do 
+    collection do 
+      delete :bulk_delete_books
+    end
+  end
 end
