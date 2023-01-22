@@ -1,0 +1,4 @@
+<% params[:book_ids].each do |book_id| %>
+  $("#book_row_<%= book_id %>").remove();
+<% end %>
+$("#delete-books").hide();
