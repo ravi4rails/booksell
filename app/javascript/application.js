@@ -8,12 +8,12 @@ $(document).ready(function() {
   $('.book-select-check').on('click', function(){
     if($(this).prop('checked')) {
       counter += 1;
-      // $("#delete-books").css('display', 'block');
+      $("#delete-books").text(`Delete ${pluralize(counter, 'Book')}`);
       $("#delete-books").show();
     } else {
       counter -= 1;
+      $("#delete-books").text(`Delete ${pluralize(counter, 'Book')}`);
       if(counter <= 0) {
-        // $("#delete-books").css('display', 'none');
         $("#delete-books").hide();
       }
     }
@@ -36,3 +36,11 @@ $(document).ready(function() {
   });
 
 });
+
+const pluralize = (counter, string) => {
+  if(counter > 1) {
+    return `${counter} ${string+'s'}`
+  } else {
+    return `${counter} ${string}`
+  }
+}
