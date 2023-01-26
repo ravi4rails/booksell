@@ -33,6 +33,12 @@ $(document).ready(function() {
         url: 'books/bulk_delete_books',
         type: 'DELETE',
         data: { book_ids: bookIds },
+        beforeSend: () => {
+          $("#loader").show();
+        },
+        complete: () => {
+          $("#loader").hide();
+        },
         success: () => {
           $("#flash-notification").html(
             `
