@@ -3,6 +3,10 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import * as bootstrap from "bootstrap"
 
+$(function(){
+  $('[data-bs-toggle="tooltip"]').tooltip();
+});
+
 $(document).ready(function() {
   var counter = 0;
   $('.book-select-check').on('click', function(){
@@ -69,6 +73,22 @@ $(document).ready(function() {
     } else {
       $("#delete-books").hide()
     }
+  });
+
+  $('.copy-link').on('click', function(){
+    const link = $(this).prev('a').attr('href');
+
+    var temp = $("<input>");
+    $('body').append(temp);
+    temp.val(link).select();
+    document.execCommand('copy');
+
+    $(this).attr('title', 'Link Copied')
+           .tooltip('_fixTitle')
+           .tooltip('show')
+           .attr('title', 'Copy link to clipboard')
+           .tooltip('_fixTitle'); 
+    temp.remove();
   });
 
 });
