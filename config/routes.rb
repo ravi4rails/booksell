@@ -9,4 +9,8 @@ Rails.application.routes.draw do
       delete :bulk_delete_books
     end
   end
+
+  namespace :admin do 
+    resources :books
+  end
 end

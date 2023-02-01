@@ -1,0 +1,43 @@
+<div class="col-lg-12 mt-5 mb-5">
+  <div id="flash-notification"></div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="books-index-master">
+            <label class="form-check-label" for="books-index-master"></label>
+          </div>
+        </th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Links</th>
+      </tr>
+    <thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr id="book_row_<%= book.id %>">
+          <td>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input book-select-check" id="book_<%= book.id %>" data-book-id="<%= book.id %>">
+              <label class="form-check-label" for="book_<%= book.id %>"></label>
+            </div>
+          </td>
+          <td><%= book.name %></td>
+          <td><%= book.price_with_currency_sign %></td>
+          <td><%= book.author %></td>
+          <td><%= book.category %></td>
+          <td>
+            <%= link_to 'Buy this book', "#{book.buy_link}/#{book.id}", class: 'book-buy-link btn btn-success', target: '_blank' %>
+            <button type="button" class="btn btn-primary copy-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy link to clipboard">Copy Buy Link</button>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-danger" id="delete-books" style="display: none;">Delete Books</button>
+
+</div>

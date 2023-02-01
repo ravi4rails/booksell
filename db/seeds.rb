@@ -75,5 +75,54 @@ books = Book.create([
     author: 'M.D. Julia Seton',
     category: 'Self Help',
     buy_link: 'https://somebooksellingsite.com/purchase'
+  },
+  {
+    name: 'The Magic of Thinking Big',
+    price: 12.99,
+    author: 'David J. Schwartz',
+    category: 'Self Help',
+    buy_link: 'https://somebooksellingsite.com/purchase'
+  }, 
+  {
+    name: 'Steal Like an Artist',
+    price: 30.0,
+    author: 'Austin Kleon',
+    category: 'Self Help',
+    buy_link: 'https://somebooksellingsite.com/purchase'
+  },
+  {
+    name: "Don't Stop Now",
+    price: 20.0,
+    author: 'Austin Kleon',
+    category: 'Self Help',
+    buy_link: 'https://somebooksellingsite.com/purchase'
+  }, 
+  {
+    name: 'Psychology of Money',
+    price: 30.0,
+    author: 'Morgan Housel',
+    category: 'Self Help',
+    buy_link: 'https://somebooksellingsite.com/purchase'
+  }, 
+  {
+    name: 'DO EPIC SHIT',
+    price: 12.0,
+    author: 'Ankur Warikoo',
+    category: 'Self Help',
+    buy_link: 'https://somebooksellingsite.com/purchase'
+  },
+  {
+    name: 'GET EPIC SHIT DONE',
+    price: 12.0,
+    author: 'Ankur Warikoo',
+    category: 'Self Help',
+    buy_link: 'https://somebooksellingsite.com/purchase'
+  },
+  {
+    name: 'How to Win Friends and Influence People',
+    price: 12.0,
+    author: 'Dale Carnegie',
+    category: 'Self Help',
+    buy_link: 'https://somebooksellingsite.com/purchase'
   }
 ])
