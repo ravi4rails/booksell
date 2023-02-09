@@ -1,0 +1,19 @@
+<div class="row pt-4">
+  <div class="col-4">
+    <% if @book.cover_image.present?%>
+      <%= image_tag @book.cover_image, class: 'img-fluid' %>
+    <% end %>    
+  </div>
+  <div class="col-6">
+    <div>
+      <h3><%= @book.name %></h3>
+    </div>
+    <div>
+      <h5>by <a href="javascript:void(0)"><span class="text-primary"><%= @book.author %></span></a></h5>
+    </div>
+    <div>
+      <h5 class="text-primary"><%= @book.price_with_currency_sign %></h5>
+    </div>
+  </div>
+</div>
+

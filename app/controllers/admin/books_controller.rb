@@ -48,6 +48,6 @@ class Admin::BooksController < AdminController
   end
 
   def book_params
-    params.require(:book).permit(:name, :price, :author, :category, :buy_link)
+    params.require(:book).permit(:name, :price, :author, :category, :buy_link, :cover_image)
   end
 end
