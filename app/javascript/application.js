@@ -131,3 +131,14 @@ const pluralize = (counter, string) => {
     return `${counter} ${string}`
   }
 }
+
+window.addEventListener('beforeunload', function(event){
+  if($("#book-editable-area").is(":visible")) {
+    event.preventDefault();
+    event.returnValue = '';
+  }
+  // if($("#editable-name").val() === '') {
+  //   event.preventDefault();
+  //   event.returnValue = '';
+  // }
+});
