@@ -1,5 +1,6 @@
 class Admin::BooksController < AdminController
-  before_action :set_book, only: %i[edit show update destroy]
+  before_action :set_book, only: %i[edit show update destroy update_book_name]
+  skip_before_action :verify_authenticity_token, only: %i[update_book_name]
 
   def index
     @books = Book.all
@@ -38,6 +39,13 @@ class Admin::BooksController < AdminController
     respond_to do |format|
       @book.destroy
       format.html { redirect_to admin_books_path, notice: 'Book deleted successfully' }
+    end
+  end
+
+  def update_book_name
+    respond_to do |format|
+      @book.update(name: params[:book_name])
+      format.js
     end
   end
 

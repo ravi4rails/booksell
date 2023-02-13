@@ -91,6 +91,37 @@ $(document).ready(function() {
     temp.remove();
   });
 
+  $("#book-name-editable").on('click', function(){
+    $("#book-title").hide();
+    $("#book-editable-area").show();
+  });
+
+  $("#cancel-update").on('click', function(){
+    $("#book-title").show();
+    $("#book-editable-area").hide();
+  });
+
+  $("#update-book-name").on('click', function(){
+    const bookId = $(this).data('book-id');
+    const bookName = $("#editable-name").val();
+    $.ajax({
+      url: `/admin/books/${bookId}/update_book_name`,
+      type: 'PATCH',
+      data: { book_name: bookName },
+      beforeSend: () => {
+        $("#loader").show();
+      },
+      complete: () => {
+        $("#loader").hide();
+      },
+      success: () => {
+        $("#book-name").text(bookName)
+        $("#book-title").show();
+        $("#book-editable-area").hide();
+      }
+    });
+  });
+
 });
 
 const pluralize = (counter, string) => {

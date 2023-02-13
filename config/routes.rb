@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do 
-    resources :books
+    resources :books do 
+      patch :update_book_name, on: :member
+    end
   end
 end
